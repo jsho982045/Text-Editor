@@ -7,7 +7,7 @@
 }
 
 body{
-    background: linear-gradient(135deg, #2e7df3 0%, #c3cfe2 100%);
+    background: #4c6bf7;
 }
 
 .container{
@@ -115,3 +115,9 @@ input[type="color"]::-moz-color-swatch{
     opacity: 1;
 }
 
+.word-count{
+    margin-top: 10px;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}

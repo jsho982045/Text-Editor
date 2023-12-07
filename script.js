@@ -8,6 +8,7 @@ let alignButtons = document.querySelectorAll(".align");
 let spacingButtons = document.querySelectorAll(".spacing");
 let formatButtons = document.querySelectorAll(".format");
 let scriptButtons = document.querySelectorAll(".script");
+let wordCountDiv = document.getElementById("word-count");
 
 let fontList = [
     "Arial",
@@ -19,6 +20,47 @@ let fontList = [
     "Cursive",
 ];
 
+const updateWordCount = () => {
+    let text = writingArea.innerText.trim();
+    let words = text.split(/\s+/).filter(function(n) {return n!= ''});
+    wordCountDiv.innerText = `Word count: ${words.length}`;
+};
+
+writingArea.addEventListener("keyup", updateWordCount);
+writingArea.addEventListener("input", updateWordCount);
+
+document.getElementById("saveDocument").addEventListener("click", function() {
+    let defaultFilename = getDefaultFilename();
+    let userFilename = prompt("Enter a filename:", defaultFilename);
+    if (userFilename) {
+        const text = writingArea.innerHTML;
+        const filename = userFilename.endsWith('.txt') ? userFilename : userFilename + '.txt';
+        downloadFile(filename, text);
+        alert("File saved successfully!");
+    }
+});
+
+
+function getDefaultFilename() {
+    let text = writingArea.innerText.trim();
+    let words = text.split(/\s+/);
+    let firstFewWords = words.slice(0, 5).join(" ");
+    firstFewWords = firstFewWords.replace(/[^a-zA-Z0-9]/g, "_"); // Sanitize for filename
+    return firstFewWords || "document";
+}
+
+
+function downloadFile(filename, text) {
+    const element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+}
+
+document.addEventListener('DOMContentLoaded', updateWordCount);
 const intializer = () => {
     highlighter(alignButtons, true);
     highlighter(spacingButtons, true);
