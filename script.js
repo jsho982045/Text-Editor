@@ -60,6 +60,11 @@ function downloadFile(filename, text) {
     document.body.removeChild(element);
 }
 
+document.getElementById("pageColor").addEventListener("input", function(e) {
+    const color = e.target.value;
+    document.getElementById("text-input").style.backgroundColor = color;
+});
+
 document.addEventListener('DOMContentLoaded', updateWordCount);
 const intializer = () => {
     highlighter(alignButtons, true);
