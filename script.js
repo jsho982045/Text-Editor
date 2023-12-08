@@ -25,6 +25,19 @@ document.getElementById("newPage").addEventListener("click", function() {
     window.open(window.location.href, '_blank');
 });
 
+// Drawer functions
+document.getElementById('toggleDrawer').addEventListener('click', function() {
+    var toolbarContainer = document.getElementById('toolbarContainer');
+    if (toolbarContainer.classList.contains('toolbar-opened')) {
+        toolbarContainer.classList.remove('toolbar-opened');
+        toolbarContainer.classList.add('toolbar-closed');
+    } else {
+        toolbarContainer.classList.remove('toolbar-closed');
+        toolbarContainer.classList.add('toolbar-opened');
+    }
+});
+
+
 
 // Event listeners for the document title
 documentTitleDiv.addEventListener("focus", function() {

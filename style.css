@@ -21,6 +21,7 @@ html, body{
     overflow: hidden; 
     border-radius: 0; 
     box-shadow: none; 
+    
 }
 
 .options {
@@ -140,3 +141,22 @@ input[type="color"]::-moz-color-swatch{
     margin-bottom: 2px;
     background-color: #eee;
   }
+
+  .toolbar-opened {
+    height: auto;
+    overflow: visible;
+    transition: height 0.3s ease-in-out;
+}
+
+.toolbar-closed {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+}
+#toggleDrawer {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    left: 10px; /* Adjust as needed */
+    z-index: 10; /* Ensures it sits above other elements */
+}
+

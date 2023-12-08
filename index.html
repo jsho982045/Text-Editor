@@ -14,6 +14,10 @@
 
     
     <div class="container">
+        <button id="toggleDrawer" title="Hide Toolbar">
+            <i class="fa fa-bars"></i>
+        </button>
+        <div id="toolbarContainer" class="toolbar-opened">
         <div id="document-title" contenteditable="true">New Document</div>
         <div class="options">
             <button id="bold" class="option-button format" title="Bold">
@@ -94,6 +98,7 @@
                 <input type="color" id="pageColor" class="adv-option-button">
                 <label for="pageColor">Page Color</label>
             </div>
+        </div>
         </div>
         <div id="text-input" contenteditable="true" spellcheck="true"></div>
         <div id="word-count">Word count: 0</div>
