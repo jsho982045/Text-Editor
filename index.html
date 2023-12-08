@@ -12,7 +12,9 @@
 
 <body>
 
+    
     <div class="container">
+        <div id="document-title" contenteditable="true">New Document</div>
         <div class="options">
             <button id="bold" class="option-button format" title="Bold">
                 <i class="fa-solid fa-bold"></i>
@@ -66,6 +68,9 @@
             <button id="saveDocument" class="option-button" title="Save Document">
                 <i class="fa-solid fa-floppy-disk"></i>
             </button>
+            <button id="newPage" class="option-button" title="New Page">
+                <i class="fa-solid fa-plus"></i>
+            </button>            
             <select id="formatBlock" class="adv-option-button">
                 <option value="H1">H1</option>
                 <option value="H2">H2</option>
@@ -89,11 +94,9 @@
                 <input type="color" id="pageColor" class="adv-option-button">
                 <label for="pageColor">Page Color</label>
             </div>
-
-
         </div>
         <div id="text-input" contenteditable="true" spellcheck="true"></div>
-        <div id="word-count">Word count: </div>
+        <div id="word-count">Word count: 0</div>
     </div>
 
     <script src="script.js"></script>

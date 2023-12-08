@@ -14,23 +14,23 @@ html, body{
 }
 
 .container {
-    display: flex; /* Use flexbox layout */
-    flex-direction: column; /* Stack children vertically */
-    height: 100%; /* Set container to full viewport height */
-    max-width: 100vw; /* Ensure it doesn't exceed the width of the viewport */
-    overflow: hidden; /* Hide any overflow */
-    border-radius: 0; /* Remove border-radius for full width */
-    box-shadow: none; /* Optional: remove shadow if you don't need it */
+    display: flex; 
+    flex-direction: column; 
+    height: 100%; 
+    max-width: 100vw; 
+    overflow: hidden; 
+    border-radius: 0; 
+    box-shadow: none; 
 }
 
 .options {
-    background-color: #fff;
+    background-color: #eeeeee;
     padding: 10px 20px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 15px;
-    z-index: 2; /* Ensure the toolbar is above the text input */
+    z-index: 2; 
 }
 
 button{
@@ -81,12 +81,12 @@ input[type="color"]::-moz-color-swatch{
 
 
 #text-input {
-    flex-grow: 1; /* Allow the text area to fill the remaining space */
+    flex-grow: 1; 
     padding: 20px;
-    border: none; /* Remove border */
-    outline: none; /* Remove outline */
-    resize: none; /* Remove resizing handle */
-    margin-top: 0; /* Remove margin top */
+    border: none;
+    outline: none;
+    resize: none; 
+    margin-top: 0; 
     background-color: transparent;
 }
 
@@ -129,3 +129,14 @@ input[type="color"]::-moz-color-swatch{
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
 }
+
+#document-title {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 2px;
+    background-color: #eee;
+  }
