@@ -37,7 +37,37 @@ document.getElementById('toggleDrawer').addEventListener('click', function() {
     }
 });
 
+// Function to update delete button visibility
+function updateDeleteButtonVisibility() {
+    const deleteButton = document.getElementById("deleteDocument");
+    if (currentFilename) {
+        deleteButton.style.display = 'block'; // Show button if a file is saved
+    } else {
+        deleteButton.style.display = 'none'; // Hide button if no file is saved
+    }
+}
+updateDeleteButtonVisibility();
 
+
+
+
+// When resetting to a new document, call updateDeleteButtonVisibility
+function resetToNewDocument() {
+    writingArea.innerHTML = ''; // Clear the content
+    currentFilename = ''; // Reset the filename
+    updateDocumentTitle('New Document'); // Reset the title
+    updateDeleteButtonVisibility(); // Hide the delete button
+}
+
+
+// The delete button click event
+document.getElementById("deleteDocument").addEventListener("click", function() {
+    var confirmation = confirm("Are you sure you want to delete this file?");
+    if (confirmation) {
+        resetToNewDocument(); // Reset the editor for a new document
+        alert("File deleted successfully.");
+    }
+});
 
 // Event listeners for the document title
 documentTitleDiv.addEventListener("focus", function() {
@@ -74,7 +104,9 @@ function saveDocument(filename) {
     const text = writingArea.innerHTML;
     downloadFile(filename, text);
     lastSavedContent = writingArea.innerHTML; // Update the last saved content
+    currentFilename = filename; // Update the current filename
     alert("File saved successfully!");
+    updateDeleteButtonVisibility();
 }
 
 document.addEventListener('keydown', function(event) {
