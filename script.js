@@ -25,17 +25,24 @@ document.getElementById("newPage").addEventListener("click", function() {
     window.open(window.location.href, '_blank');
 });
 
-// Drawer functions
+// Drawer toggle function
 document.getElementById('toggleDrawer').addEventListener('click', function() {
     var toolbarContainer = document.getElementById('toolbarContainer');
     if (toolbarContainer.classList.contains('toolbar-opened')) {
         toolbarContainer.classList.remove('toolbar-opened');
         toolbarContainer.classList.add('toolbar-closed');
+        adjustTextInputPadding(true); // Add padding when toolbar is closed
     } else {
         toolbarContainer.classList.remove('toolbar-closed');
         toolbarContainer.classList.add('toolbar-opened');
+        adjustTextInputPadding(false); // Remove padding when toolbar is open
     }
 });
+
+function adjustTextInputPadding(toolbarClosed) {
+    const textInput = document.getElementById("text-input");
+    textInput.style.paddingTop = toolbarClosed ? '50px' : '2'; // Toggle padding based on toolbar state
+}
 
 // Function to update delete button visibility
 function updateDeleteButtonVisibility() {
@@ -58,6 +65,8 @@ function resetToNewDocument() {
     updateDocumentTitle('New Document'); // Reset the title
     updateDeleteButtonVisibility(); // Hide the delete button
 }
+
+
 
 
 // The delete button click event
