@@ -20,37 +20,45 @@
         <div id="toolbarContainer" class="toolbar-opened">
         <div id="document-title" contenteditable="true">New Document</div>
         <div class="options">
+            <button id="newPage" class="option-button" title="New Page">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+            <button id="saveDocument" class="option-button" title="Save Document">
+                <i class="fa-solid fa-floppy-disk"></i>
+            </button>  
             <button id="bold" class="option-button format" title="Bold">
                 <i class="fa-solid fa-bold"></i>
             </button>
+            <button id="italic" class="option-button format" title="Italic">
+                <i class="fa-solid fa-italic"></i>
+            </button>
+            <button id="underline" class="option-button format" title="Underline">
+                <i class="fa-solid fa-underline"></i>
+            </button>            
             <button id="superscript" class="option-button script" title="Superscript">
                 <i class="fa-solid fa-superscript"></i>
             </button>
             <button id="subscript" class="option-button script" title="Subscript">
                 <i class="fa-solid fa-subscript"></i>
             </button>
-
             <button id="insertOrderedList" class="option-button" title="Numbered list">
                 <div class="fa-solid fa-list-ol"></div>
             </button>
             <button id="insertUnorderedList" class="option-button" title="Bulleted list">
                 <i class="fa-solid fa-list"></i>
             </button>
-
             <button id="undo" class="option-button" title="Undo">
                 <i class="fa-solid fa-rotate-left"></i>
             </button>
             <button id="redo" class="option-button"  title="Redo">
                 <i class="fa-solid fa-rotate-right"></i>
             </button>
-
             <button id="createLink" class="option-button link" title="Link">
                 <i class="fa fa-link"></i>
             </button>
             <button id="unlink" class="option-button" title="Remove link">
                 <i class="fa fa-unlink"></i>
             </button>
-
             <button id="justifyLeft" class="option-button align" title="Left align">
                 <i class="fa-solid fa-align-left"></i>
             </button>
@@ -68,13 +76,7 @@
             </button>
             <button id="outdent" class="option-button spacing" title="Outdent">
                 <i class="fa-solid fa-outdent"></i>
-            </button>
-            <button id="saveDocument" class="option-button" title="Save Document">
-                <i class="fa-solid fa-floppy-disk"></i>
-            </button>
-            <button id="newPage" class="option-button" title="New Page">
-                <i class="fa-solid fa-plus"></i>
-            </button>           
+            </button>         
             <button id="deleteDocument" class="option-button" title="Delete Document">
                 <i class="fa-solid fa-trash-can"></i>
             </button>             
@@ -101,6 +103,7 @@
                 <input type="color" id="pageColor" class="adv-option-button">
                 <label for="pageColor">Page Color</label>
             </div>
+
         </div>
         </div>
         <div id="text-input" contenteditable="true" spellcheck="true"></div>

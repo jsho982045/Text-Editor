@@ -271,23 +271,43 @@ const highlighter = (className, needsRemoval) => {
         button.addEventListener("click", () => {
             if (needsRemoval) {
                 let alreadyActive = false;
-                if (button.classList.contains("active")) {
+                if (button.classList.contains("button-active")) {
                     alreadyActive = true;
                 }
                 highlighterRemover(className);
                 if (!alreadyActive) {
-                    button.classList.add("active");
+                    button.classList.add("button-active");
                 }
             } else {
-                button.classList.toggle("active");
+                button.classList.toggle("button-active");
             }
         });
     });
 };
 
+const boldButton = document.getElementById("bold");
+if (boldButton) {
+    boldButton.addEventListener("click", () => {
+        // Check if the writingArea is the currently active element
+        if (document.activeElement === writingArea) {
+            console.log("writingArea is focused");
+            modifyText("bold", false, null);
+        } else {
+            console.log("writingArea is not focused");
+            // Optionally, you can set the focus to the writingArea
+            writingArea.focus();
+            modifyText("bold", false, null);
+        }
+    });
+} else {
+    console.log("Bold button not found");
+}
+
+
+
 const highlighterRemover = (className) => {
     className.forEach((button) => {
-        button.classList.remove("active");
+        button.classList.remove("button-active");
     });
 };
 
@@ -323,4 +343,7 @@ function initializer() {
     // Initialize any other features here if needed
 }
 
-initializer(); // Call the initializer function to set things up
+initializer();
+
+
+highlighter(optionsButtons, false); // Call the initializer function to set things up
